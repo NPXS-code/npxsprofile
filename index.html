@@ -782,6 +782,36 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     </div>
                 </a>
 
+                 <!-- ชิ้นที่ ุ6 แบบทำเป็นปุ่มลิงก์ไปยัง Facebook Reel -->
+                <a href="https://www.facebook.com/reel/24130453133249118" target="_blank"
+                    class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card block cursor-pointer flex flex-col">
+
+                    <div class="relative w-full aspect-[9/16] md:aspect-video overflow-hidden rounded-t-3xl bg-black">
+                        <img src="images/525740845_1349378083855472_4988593617756336644_n.jpg" alt="Facebook Reel Cover"
+                            loading="lazy"
+                            class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                            <div
+                                class="w-14 h-14 md:w-16 md:h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:bg-[#1877F2] transition-colors duration-300 shadow-xl">
+                                <i class="fas fa-play text-white text-xl md:text-2xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-2">
+                        <span
+                            class="text-[#1877F2] text-[10px] md:text-xs font-bold mb-2 flex items-center bg-[#1877F2]/10 w-fit px-3 py-1 rounded-full"><i
+                                class="fab fa-facebook mr-2"></i> เปิดใน Facebook</span>
+                        <h3
+                            class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
+                            งาน Motion,Edit Video,Record voice และ Edit voice นโยบาย ผู้ลงสมัครนายก อวท.วสวธ.2569
+                        </h3>
+                        <p
+                            class="text-brand-cyan text-xs md:text-sm mt-2 font-semibold uppercase tracking-wider flex items-center">
+                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                        </p>
+                    </div>
+                </a>
+
             </div>
                     
             
@@ -852,13 +882,8 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
         const originalFacebookSlide = portfolioSlides.find(slide =>
             slide.matches('a[href="https://www.facebook.com/reel/1057563800217993"]')
         );
-        const newFacebookSlide = originalFacebookSlide.cloneNode(true);
-        newFacebookSlide.href = 'https://www.facebook.com/reel/24130453133249118';
-        newFacebookSlide.querySelector('img').src = 'images/525740845_1349378083855472_4988593617756336644_n.jpg';
-        newFacebookSlide.querySelector('h3').textContent = 'งาน Motion,Edit Video,Record voice และ Edit voice นโยบาย ผู้ลงสมัครนายก อวท.วสวธ.2569';
 
         portfolioSlides.forEach(slide => portfolioWrapper.appendChild(slide));
-        portfolioWrapper.appendChild(newFacebookSlide);
 
         // Init Swiper for Sparks Carousel Effect
         const swiper = new Swiper('.mySwiper', {
