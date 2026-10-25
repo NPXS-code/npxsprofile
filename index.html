@@ -51,10 +51,20 @@
         }
     </script>
 
+    <script>
+        document.documentElement.dataset.theme = localStorage.getItem('npxs-theme') === 'light' ? 'light' : 'dark';
+    </script>
+
     <style>
         /* Base & Scrollbar */
         html {
             scroll-behavior: smooth;
+            scrollbar-gutter: stable;
+            color-scheme: dark;
+        }
+
+        html[data-theme="light"] {
+            color-scheme: light;
         }
 
         body {
@@ -261,6 +271,188 @@
             }
         }
 
+        [data-theme="light"] body {
+            background-color: #f5f5f5;
+            color: #18181b;
+        }
+
+        [data-theme="light"] ::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+
+        [data-theme="light"] ::-webkit-scrollbar-thumb {
+            background: #c4c4c8;
+        }
+
+        [data-theme="light"] #preloader,
+        [data-theme="light"] .youtube-header,
+        [data-theme="light"] .youtube-rail {
+            background: #fff;
+        }
+
+        [data-theme="light"] #navbar {
+            border-bottom: 1px solid #e4e4e7;
+        }
+
+        [data-theme="light"] .youtube-rail a {
+            color: #27272a;
+        }
+
+        [data-theme="light"] .youtube-rail a:hover,
+        [data-theme="light"] .youtube-rail a.active {
+            border-color: #d4d4d8;
+            background: #e4e4e7;
+        }
+
+        [data-theme="light"] #mobileMenu {
+            border-color: #e4e4e7;
+            background: #fff;
+        }
+
+        [data-theme="light"] #mobileMenu a,
+        [data-theme="light"] .language-button {
+            color: #52525b;
+        }
+
+        [data-theme="light"] #mobileMenu a:hover,
+        [data-theme="light"] #mobileMenu a.active {
+            border-color: #d4d4d8;
+            background: #f4f4f5;
+            color: #18181b;
+        }
+
+        [data-theme="light"] .profile-intro-card,
+        [data-theme="light"] .skill-card,
+        [data-theme="light"] .contact-card {
+            border-color: #e4e4e7;
+            background: #fff;
+            color: #18181b;
+            box-shadow: 0 8px 24px rgba(24, 24, 27, 0.05);
+        }
+
+        [data-theme="light"] .skill-card h3,
+        [data-theme="light"] .portfolio-category-title,
+        [data-theme="light"] .channel-tabs a:hover,
+        [data-theme="light"] .channel-tabs a.active {
+            color: #18181b;
+        }
+
+        [data-theme="light"] .skill-card p,
+        [data-theme="light"] .skills-heading > p,
+        [data-theme="light"] .contact-copy p {
+            color: #52525b;
+        }
+
+        [data-theme="light"] .skill-card-index,
+        [data-theme="light"] .mySwiper .swiper-slide p,
+        [data-theme="light"] .photo-gallery-caption p {
+            color: #71717a;
+        }
+
+        [data-theme="light"] .skills-heading,
+        [data-theme="light"] .mySwiper > .portfolio-category[aria-labelledby="video-works-title"],
+        [data-theme="light"] .contact-footer {
+            border-color: #e4e4e7;
+        }
+
+        [data-theme="light"] .channel-tabs a.active::after {
+            background: #18181b;
+        }
+
+        [data-theme="light"] #expertise,
+        [data-theme="light"] #works {
+            background-color: transparent;
+        }
+
+        [data-theme="light"] #works .bg-brand-card {
+            background-color: transparent;
+        }
+
+        [data-theme="light"] #contact {
+            background:
+                radial-gradient(ellipse at 18% 18%, rgba(244, 63, 94, 0.08), transparent 36%),
+                radial-gradient(ellipse at 88% 72%, rgba(6, 182, 212, 0.06), transparent 34%),
+                #fafafa;
+        }
+
+        [data-theme="light"] .contact-eyebrow,
+        [data-theme="light"] .contact-note,
+        [data-theme="light"] .contact-card {
+            color: #27272a;
+        }
+
+        [data-theme="light"] .contact-card-detail {
+            color: #71717a;
+        }
+
+        [data-theme="light"] .contact-note i {
+            border-color: #e4e4e7;
+        }
+
+        [data-theme="light"] .photo-gallery-cta {
+            border-color: #d4d4d8;
+            background: #fff;
+            color: #27272a;
+        }
+
+        [data-theme="light"] .photo-gallery-cta:hover {
+            border-color: #f43f5e;
+            background: #f43f5e;
+            color: #fff;
+        }
+
+        [data-theme="light"] .text-white {
+            color: #18181b !important;
+        }
+
+        [data-theme="light"] .text-gray-300 {
+            color: #52525b !important;
+        }
+
+        [data-theme="light"] .text-gray-400 {
+            color: #71717a !important;
+        }
+
+        [data-theme="light"] .text-gray-500 {
+            color: #71717a !important;
+        }
+
+        [data-theme="light"] .bg-brand-card\/30 {
+            background-color: #fafafa;
+        }
+
+        [data-theme="light"] .bg-\[\#181818\] {
+            background-color: #fff;
+        }
+
+        [data-theme="light"] .bg-\[\#272727\] {
+            background-color: #e4e4e7;
+        }
+
+        [data-theme="light"] .border-white\/5,
+        [data-theme="light"] .border-white\/10 {
+            border-color: #e4e4e7;
+        }
+
+        [data-theme="light"] .language-button[aria-pressed="true"] {
+            background: #27272a;
+            color: #fff;
+        }
+
+        [data-theme="light"] .theme-toggle {
+            border-color: #e4e4e7;
+            background: #fff;
+            color: #27272a;
+        }
+
+        [data-theme="light"] #mobileMenuBtn {
+            color: #27272a;
+        }
+
+        [data-theme="light"] #works h3.text-white {
+            color: #18181b !important;
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .mediaflow-carousel {
                 overflow-x: auto;
@@ -340,6 +532,40 @@
             background: #0f0f0f;
         }
 
+        .language-button {
+            color: #a3a3a3;
+        }
+
+        .language-button[aria-pressed="true"] {
+            background: #f1f1f1;
+            color: #111;
+        }
+
+        .language-button:focus-visible {
+            outline: 2px solid #f43f5e;
+            outline-offset: 2px;
+        }
+
+        .language-fade-target {
+            transition: opacity 220ms ease-in-out;
+        }
+
+        .language-fade-out {
+            opacity: 0;
+        }
+
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation-duration: 280ms;
+            animation-timing-function: ease-in-out;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .language-fade-target {
+                transition: none;
+            }
+        }
+
         .youtube-rail {
             position: fixed;
             z-index: 40;
@@ -358,11 +584,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 7px;
             border: 1px solid transparent;
             border-radius: 12px;
             color: #f1f1f1;
-            font-size: 10px;
             transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
         }
 
@@ -583,10 +807,6 @@
             padding: 22px;
         }
 
-        .skill-card--feature {
-            grid-column: span 4;
-        }
-
         .skill-card-top {
             display: flex;
             width: 100%;
@@ -646,6 +866,18 @@
             --skill-accent: #fb7185;
             --skill-accent-bg: rgba(244, 63, 94, 0.1);
             --skill-accent-border: rgba(244, 63, 94, 0.18);
+        }
+
+        .skill-card--grading {
+            --skill-accent: #f472b6;
+            --skill-accent-bg: rgba(236, 72, 153, 0.1);
+            --skill-accent-border: rgba(236, 72, 153, 0.18);
+        }
+
+        .skill-card--editing {
+            --skill-accent: #60a5fa;
+            --skill-accent-bg: rgba(59, 130, 246, 0.1);
+            --skill-accent-border: rgba(59, 130, 246, 0.18);
         }
 
         .skill-card--sound {
@@ -774,10 +1006,6 @@
         }
 
         .mySwiper .swiper-slide h3 {
-            display: -webkit-box;
-            overflow: hidden;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
             font-size: 14px;
             line-height: 1.5;
         }
@@ -860,6 +1088,11 @@
             font-weight: 700;
             line-height: 1.08;
             letter-spacing: -0.04em;
+        }
+
+        .contact-copy h2 .text-gradient {
+            color: #f43f5e;
+            -webkit-text-fill-color: #f43f5e;
         }
 
         .contact-copy p {
@@ -984,13 +1217,8 @@
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .skill-card,
-            .skill-card--feature {
+            .skill-card {
                 grid-column: span 1;
-            }
-
-            .skill-card--feature {
-                grid-column: span 2;
             }
 
             .mySwiper .portfolio-grid {
@@ -1074,8 +1302,7 @@
                 gap: 12px;
             }
 
-            .skill-card,
-            .skill-card--feature {
+            .skill-card {
                 min-height: 190px;
                 grid-column: span 1;
                 padding: 20px;
@@ -1123,6 +1350,105 @@
             }
         }
 
+        html[data-theme="light"] body {
+            background: #fafafa !important;
+            color: #18181b !important;
+        }
+
+        html[data-theme="light"] #preloader,
+        html[data-theme="light"] .youtube-header {
+            background-color: #fff !important;
+        }
+
+        html[data-theme="light"] .youtube-rail {
+            background-color: #fafafa !important;
+        }
+
+        html[data-theme="light"] #navbar {
+            background-color: #fff !important;
+            border-color: #e4e4e7;
+        }
+
+        html[data-theme="light"] #mobileMenu,
+        html[data-theme="light"] .language-button,
+        html[data-theme="light"] .theme-toggle {
+            background-color: #fff !important;
+            color: #27272a !important;
+        }
+
+        html[data-theme="light"] .youtube-rail a {
+            color: #27272a !important;
+        }
+
+        html[data-theme="light"] .youtube-rail a:hover,
+        html[data-theme="light"] .youtube-rail a.active,
+        html[data-theme="light"] #mobileMenu a:hover,
+        html[data-theme="light"] #mobileMenu a.active {
+            background-color: #e4e4e7 !important;
+            color: #18181b !important;
+        }
+
+        html[data-theme="light"] .profile-intro-card,
+        html[data-theme="light"] .skill-card,
+        html[data-theme="light"] .contact-card {
+            background: #fff !important;
+            border-color: #e4e4e7 !important;
+            color: #18181b !important;
+        }
+
+        html[data-theme="light"] .skill-card h3,
+        html[data-theme="light"] .portfolio-category-title,
+        html[data-theme="light"] .contact-card-label,
+        html[data-theme="light"] #home h1,
+        html[data-theme="light"] #works h3 {
+            color: #18181b !important;
+        }
+
+        html[data-theme="light"] .skill-card p,
+        html[data-theme="light"] .skills-heading > p,
+        html[data-theme="light"] .contact-copy p,
+        html[data-theme="light"] .contact-card-detail,
+        html[data-theme="light"] .mySwiper .swiper-slide p,
+        html[data-theme="light"] .photo-gallery-caption p,
+        html[data-theme="light"] .text-gray-300,
+        html[data-theme="light"] .text-gray-400,
+        html[data-theme="light"] .text-gray-500 {
+            color: #52525b !important;
+        }
+
+        html[data-theme="light"] #works {
+            background-color: #fafafa !important;
+        }
+
+        html[data-theme="light"] #works .bg-brand-card,
+        html[data-theme="light"] #works .mySwiper .swiper-slide > div:nth-child(2) {
+            background-color: transparent !important;
+        }
+
+        html[data-theme="light"] #contact {
+            background:
+                radial-gradient(ellipse at 18% 18%, rgba(244, 63, 94, 0.08), transparent 36%),
+                radial-gradient(ellipse at 88% 72%, rgba(6, 182, 212, 0.06), transparent 34%),
+                #fafafa !important;
+        }
+
+        html[data-theme="light"] .language-button[aria-pressed="true"] {
+            background-color: #27272a !important;
+            color: #fff !important;
+        }
+
+        html[data-theme="light"] .photo-gallery-cta {
+            background: #fff !important;
+            border-color: #d4d4d8 !important;
+            color: #27272a !important;
+        }
+
+        html[data-theme="light"] .photo-gallery-cta:hover {
+            background: #f43f5e !important;
+            border-color: #f43f5e !important;
+            color: #fff !important;
+        }
+
     </style>
 </head>
 
@@ -1134,11 +1460,12 @@
     </div>
 
     <!-- Image Modal (Lightbox) -->
-    <div id="imageModal" role="dialog" aria-modal="true" aria-label="ดูภาพขนาดใหญ่" aria-hidden="true"
+    <div id="imageModal" role="dialog" aria-modal="true" aria-label="ดูภาพขนาดใหญ่"
+        data-i18n-aria="modal_label" aria-hidden="true"
         class="fixed inset-0 z-[99999] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300">
         <button id="closeModal"
             class="absolute top-6 right-6 md:top-10 md:right-10 text-white text-4xl hover:text-brand-pink transition-colors focus:outline-none"
-            aria-label="ปิดภาพ">&times;</button>
+            aria-label="ปิดภาพ" data-i18n-aria="close_image">&times;</button>
         <img id="modalImage" src="" alt="Full Screen"
             class="max-w-[90%] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
     </div>
@@ -1146,10 +1473,11 @@
    
 
     <!-- Navbar -->
-    <nav class="fixed inset-x-0 top-0 z-50 youtube-header py-3 transition-all duration-300" id="navbar">
+    <nav class="fixed inset-x-0 top-0 z-50 youtube-header py-3" id="navbar">
         <div class="mx-auto flex max-w-[1500px] items-center justify-between px-4 md:px-6">
             <div class="flex items-center gap-4">
-                <button id="mobileMenuBtn" class="text-white text-xl focus:outline-none md:hidden" aria-label="เปิดเมนู">
+                <button id="mobileMenuBtn" class="text-white text-xl focus:outline-none md:hidden" aria-label="เปิดเมนู"
+                    aria-controls="mobileMenu" aria-expanded="false" data-i18n-aria="open_menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="#home" class="flex items-center gap-2 text-xl font-bold tracking-tight">
@@ -1157,51 +1485,64 @@
                     <span>NPXS <span class="font-normal text-gray-400">Profile</span></span>
                 </a>
             </div>
-           
-                
+            <div class="flex items-center gap-2">
+                <button id="themeToggle" type="button"
+                    class="theme-toggle grid h-9 w-9 place-items-center rounded-full border border-[#303030] bg-[#181818] text-sm text-white transition hover:opacity-80"
+                    aria-label="เปลี่ยนเป็นธีมสว่าง" title="เปลี่ยนเป็นธีมสว่าง">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <div class="flex items-center gap-1 rounded-full border border-[#303030] bg-[#181818] p-1"
+                    role="group" aria-label="เลือกภาษา" data-i18n-aria="language_select">
+                    <button type="button" class="language-button rounded-full px-3 py-1 text-xs font-semibold transition"
+                        data-language="th" aria-pressed="true">TH</button>
+                    <button type="button" class="language-button rounded-full px-3 py-1 text-xs font-semibold transition"
+                        data-language="en" aria-pressed="false">EN</button>
+                </div>
+            </div>
         </div>
         <div id="mobileMenu"
             class="hidden absolute top-full left-0 w-full border-t border-[#303030] bg-[#181818] flex flex-col p-4 space-y-4 text-center">
-            <a href="#home" class="mobile-link text-gray-300">หน้าแรก</a>
-            <a href="#expertise" class="mobile-link text-gray-300">ทักษะ</a>
-            <a href="#works" class="mobile-link text-gray-300">ผลงาน</a>
-            <a href="#contact" class="mobile-link text-gray-300">ติดต่อพูดคุย</a>
+            <a href="#home" class="mobile-link text-gray-300" data-i18n="nav_home">หน้าแรก</a>
+            <a href="#expertise" class="mobile-link text-gray-300" data-i18n="nav_skills">ทักษะ</a>
+            <a href="#works" class="mobile-link text-gray-300" data-i18n="nav_works">ผลงาน</a>
+            <a href="#contact" class="mobile-link text-gray-300" data-i18n="nav_contact">ติดตามและติดต่อ</a>
         </div>
     </nav>
 
-    <aside class="youtube-rail" aria-label="เมนูหลัก">
-        <a href="#home" class="active" aria-current="page"><i class="fas fa-house"></i><span>หน้าแรก</span></a>
-        <a href="#expertise"><i class="fas fa-wand-magic-sparkles"></i><span>ทักษะ</span></a>
-        <a href="#works"><i class="fas fa-circle-play"></i><span>ผลงาน</span></a>
-        <a href="#contact"><i class="fas fa-user"></i><span>ติดต่อ</span></a>
+    <aside class="youtube-rail" aria-label="เมนูหลัก" data-i18n-aria="main_menu">
+        <a href="#home" class="active" aria-current="page" aria-label="หน้าแรก" data-i18n-aria="nav_home"><i class="fas fa-house"></i></a>
+        <a href="#expertise" aria-label="ทักษะ" data-i18n-aria="nav_skills"><i class="fas fa-wand-magic-sparkles"></i></a>
+        <a href="#works" aria-label="ผลงาน" data-i18n-aria="nav_works"><i class="fas fa-circle-play"></i></a>
+        <a href="#contact" aria-label="ติดตามและติดต่อ" data-i18n-aria="nav_contact"><i class="fas fa-user"></i></a>
     </aside>
 
     <!-- Hero Section -->
     <section id="home" class="relative page-view" data-page-view="home">
         <div class="mx-auto max-w-[1100px] px-4 md:px-8">
-            <div class="channel-banner" role="img" aria-label="ภาพหน้าปก NPXS"></div>
+            <div class="channel-banner" role="img" aria-label="ภาพหน้าปก NPXS" data-i18n-aria="cover_alt"></div>
             <div class="flex flex-col items-center gap-5 py-6 text-center sm:flex-row sm:items-center sm:gap-6 sm:text-left">
-                <img src="images/A7S04581-web.jpg" alt="รูปโปรไฟล์ Dream (NPXS)"
+                <img src="images/A7S04581-web.jpg" alt="รูปโปรไฟล์ Dream (NPXS)" data-i18n-alt="profile_alt"
                     class="h-24 w-24 shrink-0 rounded-full object-cover sm:h-32 sm:w-32">
                 <div class="min-w-0 flex-1">
                     <h1 class="text-2xl font-bold text-white md:text-3xl">Dream (NPXS)</h1>
-                    <p class="mt-1 text-sm text-gray-400"> ·PHOTOGRAPHY • VIDEOGRAPHY • GRAPHIC DESIGN •
+                    <p class="mt-1 text-sm text-gray-400"> @NPXSProfile</p>
+                    <p class="mt-2 text-sm text-gray-300">• PHOTOGRAPHY • VIDEOGRAPHY • GRAPHIC DESIGN •
                         MOTION DESIGN • SOUND ENGINEER • REMIXER 🔥</p>
-                    <p class="mt-2 text-sm text-gray-300">อายุ 20 ปี มีทักษะในการออกแบบกราฟิก ทำสื่อมัลติมีเดีย</p>
                 </div>
-                <a href="#contact"
+                <a href="#expertise" data-i18n="nav_skills"
                     class="shrink-0 rounded-full bg-[#272727] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#3f3f3f]">
-                    ติดต่อพูดคุย
+                    Professional Skills
                 </a>
             </div>
         </div>
 
         <div class="profile-intro">
             <div class="profile-intro-card">
-                <h2 class="mb-3 text-xl font-semibold text-white">เกี่ยวกับฉัน</h2>
-                <p class="max-w-3xl text-sm leading-7 text-gray-400">
-                    ผม Dream (NPXS) ทำงานด้านภาพถ่าย วิดีโอ กราฟิก และเสียง
-                    ชอบเปลี่ยนไอเดียให้เป็นผลงานที่เล่าเรื่องและมีเอกลักษณ์
+                <h2 class="mb-3 text-xl font-semibold text-white" data-i18n="about_title">เกี่ยวกับฉัน</h2>
+                <p class="max-w-3xl text-sm leading-7 text-gray-400" data-i18n="about_text">
+                    ผม Dream (NPXS) กำลังศึกษาอยู่ระดับ ประกาศนียบัตรวิชาชีพชั้นสูง ปีที่2 สาขาดิจิทัลกราฟิก
+                    ที่ Sahavith Business Administration Technological College (SBA)
+                    สนใจการสร้างสรรค์งานภาพและเสียง พร้อมทดลองไอเดียใหม่ ๆ เพื่อถ่ายทอดเรื่องราวในแบบของตัวเอง
                 </p>
                 <div class="mt-6 flex flex-wrap gap-3">
                     
@@ -1216,9 +1557,9 @@
             <div class="skills-heading" data-aos="fade-up">
                 <div>
                    
-                    <h2 class="font-bold">Professional <span class="text-gradient">Skills</span></h2>
+                    <h2 class="font-bold"><span data-i18n="professional">Professional</span><span class="text-gradient" data-i18n="skills">Skills</span></h2>
                 </div>
-                <p>ทักษะที่ใช้เปลี่ยนไอเดียให้เป็นภาพ เสียง และเรื่องราวที่ผู้คนจดจำ</p>
+                <p data-i18n="skills_intro">ทักษะที่ใช้เปลี่ยนไอเดียให้เป็นภาพ เสียง และเรื่องราวที่ผู้คนจดจำ</p>
             </div>
 
             <div class="skills-grid">
@@ -1228,50 +1569,77 @@
                         <span class="skill-card-index">01 / DESIGN</span>
                     </div>
                     <h3>Graphic Design</h3>
-                    <p>ออกแบบอัตลักษณ์องค์กร โลโก้ และสื่อดิจิทัลให้สื่อสารชัดเจนและมีเอกลักษณ์</p>
+                    <p data-i18n="skill_graphic">ออกแบบอัตลักษณ์องค์กร โลโก้ และสื่อดิจิทัลให้สื่อสารชัดเจนและมีเอกลักษณ์</p>
                 </div>
 
-                <div class="skill-card skill-card--feature skill-card--motion" data-aos="fade-up" data-aos-delay="140">
+                <div class="skill-card skill-card--motion" data-aos="fade-up" data-aos-delay="140">
                     <div class="skill-card-top">
                         <span class="skill-card-icon"><i class="fas fa-video" aria-hidden="true"></i></span>
-                        <span class="skill-card-index">02 / MOTION</span>
+                        <span class="skill-card-index">02 / VIDEO</span>
                     </div>
-                    <h3>Videography &amp; Motion</h3>
-                    <p>ถ่ายทำและตัดต่อวิดีโอ สร้างงาน Motion และแอนิเมชันที่ช่วยเล่าเรื่องให้มีชีวิต</p>
+                    <h3>Videography</h3>
+                    <p data-i18n="skill_video">ถ่ายทำวิดีโอ วางมุมภาพและเก็บบรรยากาศ เพื่อถ่ายทอดเรื่องราวให้น่าสนใจ</p>
                 </div>
 
-                <div class="skill-card skill-card--photo" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-card skill-card--photo" data-aos="fade-up" data-aos-delay="160">
                     <div class="skill-card-top">
                         <span class="skill-card-icon"><i class="fas fa-camera" aria-hidden="true"></i></span>
                         <span class="skill-card-index">03 / PHOTO</span>
                     </div>
                     <h3>Photography</h3>
-                    <p>ถ่ายภาพและจัดแสงเพื่อจับช่วงเวลาและถ่ายทอดเรื่องราวผ่านภาพ</p>
+                    <p data-i18n="skill_photo">ถ่ายภาพและจัดแสงเพื่อจับช่วงเวลาและถ่ายทอดเรื่องราวผ่านภาพ</p>
                 </div>
 
-                <div class="skill-card skill-card--sound" data-aos="fade-up" data-aos-delay="260">
+                <div class="skill-card skill-card--editing" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-card-top">
+                        <span class="skill-card-icon"><i class="fas fa-scissors" aria-hidden="true"></i></span>
+                        <span class="skill-card-index">04 / EDITING</span>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p data-i18n="skill_editing">ตัดต่อและเรียบเรียงภาพ เสียง และจังหวะ เพื่อให้วิดีโอกระชับและเล่าเรื่องได้ต่อเนื่อง</p>
+                </div>
+
+                <div class="skill-card skill-card--grading" data-aos="fade-up" data-aos-delay="180">
+                    <div class="skill-card-top">
+                        <span class="skill-card-icon"><i class="fas fa-palette" aria-hidden="true"></i></span>
+                        <span class="skill-card-index">05 / COLOR</span>
+                    </div>
+                    <h3>Color Grading</h3>
+                    <p data-i18n="skill_grading">ปรับแต่งสีและโทนภาพให้มีอารมณ์ สวยงาม และสอดคล้องกับเรื่องราว</p>
+                </div>
+
+                <div class="skill-card skill-card--motion" data-aos="fade-up" data-aos-delay="220">
+                    <div class="skill-card-top">
+                        <span class="skill-card-icon"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i></span>
+                        <span class="skill-card-index">06 / MOTION</span>
+                    </div>
+                    <h3>Motion Design</h3>
+                    <p data-i18n="skill_motion">สร้างกราฟิกเคลื่อนไหวและแอนิเมชัน เพื่อช่วยเล่าเรื่องและเพิ่มความน่าสนใจให้กับวิดีโอ</p>
+                </div>
+
+                <div class="skill-card skill-card--sound" data-aos="fade-up" data-aos-delay="240">
                     <div class="skill-card-top">
                         <span class="skill-card-icon"><i class="fas fa-sliders-h" aria-hidden="true"></i></span>
-                        <span class="skill-card-index">04 / SOUND</span>
+                        <span class="skill-card-index">07 / SOUND</span>
                     </div>
                     <h3>Sound Engineering</h3>
-                    <p>มิกซ์และมาสเตอริ่งเสียง ปรับสมดุลเสียงให้ชัดและกลมกลืน</p>
+                    <p data-i18n="skill_sound">มิกซ์และมาสเตอริ่งเสียง ปรับสมดุลเสียงให้ชัดและกลมกลืน</p>
                 </div>
 
-                <div class="skill-card skill-card--music" data-aos="fade-up" data-aos-delay="320">
+                <div class="skill-card skill-card--music" data-aos="fade-up" data-aos-delay="260">
                     <div class="skill-card-top">
                         <span class="skill-card-icon"><i class="fas fa-compact-disc" aria-hidden="true"></i></span>
-                        <span class="skill-card-index">05 / MUSIC</span>
+                        <span class="skill-card-index">08 / MUSIC</span>
                     </div>
                     <h3>Remixer &amp; Producer</h3>
-                    <p>รีมิกซ์และโปรดิวซ์เพลง สร้างจังหวะและซาวด์ในแบบเฉพาะตัว</p>
+                    <p data-i18n="skill_music">รีมิกซ์และโปรดิวซ์เพลง สร้างจังหวะและซาวด์ในแบบเฉพาะตัว</p>
                 </div>
             </div>
 
             <!-- Software Tools Section -->
             <div class="mt-24 pt-16 border-t border-white/5" data-aos="fade-up">
                 <h3 class="text-sm font-semibold text-gray-400 text-center mb-10 tracking-wider">
-                    เครื่องมือที่ใช้งานประจำ</h3>
+                    <span data-i18n="tools_title">เครื่องมือที่ใช้งานประจำ</span></h3>
                 <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10">
                     <!-- Photoshop -->
                     <div class="flex flex-col items-center gap-3 group cursor-default">
@@ -1350,16 +1718,16 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="works-heading skills-heading" data-aos="fade-up">
                 <div>
-                    <h2 class="font-bold">My <span class="text-gradient">Performance</span></h2>
+                    <h2 class="font-bold"><span data-i18n="works_my">My</span><span class="text-gradient" data-i18n="works_title">Works</span></h2>
                 </div>
-                <p>รวมผลงานภาพถ่าย วิดีโอ และงานสร้างสรรค์ที่คัดสรรจากโปรเจกต์ต่าง ๆ</p>
+                <p data-i18n="works_intro">รวมผลงานภาพถ่าย วิดีโอ และงานสร้างสรรค์ที่คัดสรรจากโปรเจกต์ต่าง ๆ</p>
             </div>
         </div>
 
         <!-- Swiper Carousel -->
         <div class="swiper mySwiper py-16" data-aos="fade-up" data-aos-delay="100">
             <section class="portfolio-category" aria-labelledby="video-works-title">
-                <h3 id="video-works-title" class="portfolio-category-title">งานวิดีโอ</h3>
+                <h3 id="video-works-title" class="portfolio-category-title" data-i18n="video_works">งานวิดีโอ</h3>
                 <div class="portfolio-grid">
 
                 <!-- ชิ้นที่ 0: วิดีโอ YouTube ของคุณ -->
@@ -1367,7 +1735,7 @@
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden bg-black">
                         <img src="https://img.youtube.com/vi/yWb6f4bsr4g/maxresdefault.jpg"
-                            alt="ดูวิดีโอบน YouTube" loading="lazy"
+                            alt="ดูวิดีโอบน YouTube" data-i18n-alt="watch_youtube" loading="lazy"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="w-16 h-16 bg-[#FF0000] rounded-full flex items-center justify-center shadow-xl">
@@ -1376,14 +1744,13 @@
                         </div>
                     </div>
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-4">
-                        <h3
+                        <h3 data-i18n="project_1"
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Motion และ Graphic Design 
-TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM, SILVER, PoomKitti [Official Audio]
+                            TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM, SILVER, PoomKitti [Official Audio]
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm font-semibold uppercase tracking-wider flex items-center">
-                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                            <i class="fas fa-video mr-2"></i> <span>Motion Graphics &amp; Graphic Design</span>
                         </p>
                     </div>
                 </a>
@@ -1393,7 +1760,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden bg-black">
                         <img src="https://img.youtube.com/vi/MucBW8knTTA/maxresdefault.jpg"
-                            alt="ดูวิดีโอบน YouTube" loading="lazy"
+                            alt="ดูวิดีโอบน YouTube" data-i18n-alt="watch_youtube" loading="lazy"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="w-16 h-16 bg-[#FF0000] rounded-full flex items-center justify-center shadow-xl">
@@ -1402,13 +1769,13 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                         </div>
                     </div>
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-4">
-                        <h3
+                        <h3 data-i18n="project_2"
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Motion และ Graphic Design YOUNGOHM - เจิดจรัส (VER.ไทบ้าน) Cover by Bookkee
+                            YOUNGOHM - เจิดจรัส (VER.ไทบ้าน) Cover by Bookkee
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm font-semibold uppercase tracking-wider flex items-center">
-                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                            <i class="fas fa-video mr-2"></i> <span>Motion Graphics &amp; Graphic Design</span>
                         </p>
                     </div>
                 </a>
@@ -1418,7 +1785,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden bg-black">
                         <img src="https://img.youtube.com/vi/iJolrhCmmsA/maxresdefault.jpg"
-                            alt="ดูวิดีโอบน YouTube" loading="lazy"
+                            alt="ดูวิดีโอบน YouTube" data-i18n-alt="watch_youtube" loading="lazy"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="w-16 h-16 bg-[#FF0000] rounded-full flex items-center justify-center shadow-xl">
@@ -1427,14 +1794,13 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                         </div>
                     </div>
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-4">
-                        <h3
+                        <h3 data-i18n="project_3"
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Video Color grading 
-กำลังใจบ่าวบ้านๆ - หนุ่ม พูลสวัสดิ์【Official MV】
+                            กำลังใจบ่าวบ้านๆ - หนุ่ม พูลสวัสดิ์【Official MV】
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm font-semibold uppercase tracking-wider flex items-center">
-                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                            <i class="fas fa-video mr-2"></i> <span>Video Color Grading</span>
                         </p>
                     </div>
                 </a>
@@ -1444,7 +1810,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden bg-black">
                         <img src="https://img.youtube.com/vi/taHO5FKRs74/maxresdefault.jpg"
-                            alt="ดูวิดีโอบน YouTube" loading="lazy"
+                            alt="ดูวิดีโอบน YouTube" data-i18n-alt="watch_youtube" loading="lazy"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="w-16 h-16 bg-[#FF0000] rounded-full flex items-center justify-center shadow-xl">
@@ -1453,13 +1819,13 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                         </div>
                     </div>
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-4">
-                        <h3
+                        <h3 data-i18n="project_4"
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Videography พิธีมอบประกาศนียบัตร Cambridge 2026
+                            พิธีมอบประกาศนียบัตร Cambridge 2026
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm font-semibold uppercase tracking-wider flex items-center">
-                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                            <i class="fas fa-video mr-2"></i> <span>Videography</span>
                         </p>
                     </div>
                 </a>
@@ -1469,7 +1835,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden bg-black">
                         <img src="https://img.youtube.com/vi/UXU_Q5jEmm4/maxresdefault.jpg"
-                            alt="ดูวิดีโอบน YouTube" loading="lazy"
+                            alt="ดูวิดีโอบน YouTube" data-i18n-alt="watch_youtube" loading="lazy"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="w-16 h-16 bg-[#FF0000] rounded-full flex items-center justify-center shadow-xl">
@@ -1478,14 +1844,14 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                         </div>
                     </div>
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-4">
-                        <h3
+                        <h3 data-i18n="project_5"
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Motion Sound Engineering และ Remixer เลิกกั๊กแล้วรักก่อน (RED FLAG) - NEW CHAYAPAK
+                            เลิกกั๊กแล้วรักก่อน (RED FLAG) - NEW CHAYAPAK
                             ทูลกระหม่อม Cover [ NTP RMX ] Ver. 3 ช่าพาเพลิน
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm font-semibold uppercase tracking-wider flex items-center">
-                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                            <i class="fas fa-video mr-2"></i> <span>Motion Graphics, Sound Engineering &amp; Remix</span>
                         </p>
                     </div>
                 </a>
@@ -1495,7 +1861,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card flex flex-col">
                     <div class="relative w-full aspect-video rounded-t-3xl overflow-hidden bg-black">
                         <img src="https://img.youtube.com/vi/CzeYpa8etS4/maxresdefault.jpg"
-                            alt="ดูวิดีโอบน YouTube" loading="lazy"
+                            alt="ดูวิดีโอบน YouTube" data-i18n-alt="watch_youtube" loading="lazy"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <div class="w-16 h-16 bg-[#FF0000] rounded-full flex items-center justify-center shadow-xl">
@@ -1504,13 +1870,13 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                         </div>
                     </div>
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-4">
-                        <h3
+                        <h3 data-i18n="project_6"
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Videography Sahavith Little Scout P3 2025
+                            Sahavith Little Scout P3 2025
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm font-semibold uppercase tracking-wider flex items-center">
-                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                            <i class="fas fa-video mr-2"></i> <span>Videography</span>
                         </p>
                     </div>
                 </a>
@@ -1520,7 +1886,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     class="swiper-slide portfolio-item group relative overflow-hidden bg-brand-card block cursor-pointer flex flex-col">
 
                     <div class="relative w-full aspect-[9/16] md:aspect-video overflow-hidden rounded-t-3xl bg-black">
-                        <img src="images/Sequence.jpg" alt="Facebook Reel Cover"
+                        <img src="images/Sequence.jpg" alt="Facebook Reel Cover" data-i18n-alt="facebook_reel"
                             loading="lazy"
                             class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
@@ -1533,15 +1899,14 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-2">
                         <span
                             class="text-[#1877F2] text-[10px] md:text-xs font-bold mb-2 flex items-center bg-[#1877F2]/10 w-fit px-3 py-1 rounded-full"><i
-                                class="fab fa-facebook mr-2"></i> เปิดใน Facebook</span>
-                        <h3
+                                class="fab fa-facebook mr-2"></i> <span data-i18n="open_facebook">เปิดใน Facebook</span></span>
+                        <h3 data-i18n="project_7"
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Videography,Motion,Edit Video,Record voice และ Edit voice ผลงานการแข่งขันสร้างสรรค์คอนเทนต์จากโครงการ❗️
-✨Face of Suphanburi✨
+                            ผลงานการแข่งขันสร้างสรรค์คอนเทนต์จากโครงการ❗️ ✨Face of Suphanburi✨
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm mt-2 font-semibold uppercase tracking-wider flex items-center">
-                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                            <i class="fas fa-video mr-2"></i> <span>Videography, Motion Design, Video Editing &amp; Voice Recording</span>
                         </p>
                     </div>
                 </a>
@@ -1552,6 +1917,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
 
                     <div class="relative w-full aspect-[9/16] md:aspect-video overflow-hidden rounded-t-3xl bg-black">
                         <img src="images/525740845_1349378083855472_4988593617756336644_n.jpg" alt="Facebook Reel Cover"
+                            data-i18n-alt="facebook_reel"
                             loading="lazy"
                             class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
@@ -1564,14 +1930,14 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     <div class="p-5 lg:p-6 bg-brand-card flex flex-col justify-between rounded-b-3xl gap-2">
                         <span
                             class="text-[#1877F2] text-[10px] md:text-xs font-bold mb-2 flex items-center bg-[#1877F2]/10 w-fit px-3 py-1 rounded-full"><i
-                                class="fab fa-facebook mr-2"></i> เปิดใน Facebook</span>
-                        <h3
+                                class="fab fa-facebook mr-2"></i> <span data-i18n="open_facebook">เปิดใน Facebook</span></span>
+                        <h3 data-i18n="project_8"
                             class="text-base md:text-lg font-bold text-white leading-snug group-hover:text-brand-pink transition-colors">
-                            งาน Motion,Edit Video,Record voice และ Edit voice นโยบาย ผู้ลงสมัครนายก อวท.วสวธ.2569
+                            นโยบาย ผู้ลงสมัครนายก อวท.วสวธ.2569
                         </h3>
                         <p
                             class="text-brand-cyan text-xs md:text-sm mt-2 font-semibold uppercase tracking-wider flex items-center">
-                            <i class="fas fa-video mr-2"></i> หมวดหมู่วิดีโอ
+                            <i class="fas fa-video mr-2"></i> <span>Motion Design, Video Editing &amp; Voice Recording</span>
                         </p>
                     </div>
                 </a>
@@ -1580,33 +1946,34 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
             </section>
 
             <section class="portfolio-category image-portfolio-category" aria-labelledby="image-works-title">
-                <h3 id="image-works-title" class="portfolio-category-title">งานภาพ</h3>
+                <h3 id="image-works-title" class="portfolio-category-title" data-i18n="photo_works">งานถ่ายภาพ</h3>
                 <div class="portfolio-grid">
                     <div class="photo-gallery">
                         <div class="mediaflow-carousel" role="region"
-                            aria-label="แกลเลอรีภาพ DREAM PHOTO ที่เคลื่อนที่อัตโนมัติ" tabindex="0">
+                            aria-label="แกลเลอรีภาพ DREAM PHOTO ที่เคลื่อนที่อัตโนมัติ"
+                            data-i18n-aria="photo_gallery" tabindex="0">
                             <div class="mediaflow-track">
                                 <div class="mediaflow-group">
                                     <div class="mediaflow-item">
-                                        <img src="images/Vespapala!!!.jpg" alt="ภาพถ่าย DREAM PHOTO 1" loading="lazy">
+                                        <img src="images/Vespapala!!!.jpg" alt="ภาพถ่าย DREAM PHOTO 1" data-i18n-alt="photo_1" loading="lazy">
                                     </div>
                                     <div class="mediaflow-item">
-                                        <img src="images/DSC09187.jpg" alt="ภาพถ่าย DREAM PHOTO 2" loading="lazy">
+                                        <img src="images/DSC09187.jpg" alt="ภาพถ่าย DREAM PHOTO 2" data-i18n-alt="photo_2" loading="lazy">
                                     </div>
                                     <div class="mediaflow-item">
-                                        <img src="images/A7S07980.jpg" alt="ภาพถ่าย DREAM PHOTO 3" loading="lazy">
+                                        <img src="images/A7S07980.jpg" alt="ภาพถ่าย DREAM PHOTO 3" data-i18n-alt="photo_3" loading="lazy">
                                     </div>
                                     <div class="mediaflow-item">
-                                        <img src="images/A7S07633.jpg" alt="ภาพถ่าย DREAM PHOTO 4" loading="lazy">
+                                        <img src="images/A7S07633.jpg" alt="ภาพถ่าย DREAM PHOTO 4" data-i18n-alt="photo_4" loading="lazy">
                                     </div>
                                     <div class="mediaflow-item">
-                                        <img src="images/A7S07534.jpg" alt="ภาพถ่าย DREAM PHOTO 5" loading="lazy">
+                                        <img src="images/A7S07534.jpg" alt="ภาพถ่าย DREAM PHOTO 5" data-i18n-alt="photo_5" loading="lazy">
                                     </div>
                                     <div class="mediaflow-item">
-                                        <img src="images/Congratulation 21-3-2569-12.jpg" alt="ภาพถ่าย DREAM PHOTO 6" loading="lazy">
+                                        <img src="images/Congratulation 21-3-2569-12.jpg" alt="ภาพถ่าย DREAM PHOTO 6" data-i18n-alt="photo_6" loading="lazy">
                                     </div>
                                     <div class="mediaflow-item">
-                                        <img src="images/SV_09_10_2026-170.jpg" alt="ภาพถ่าย DREAM PHOTO 7" loading="lazy">
+                                        <img src="images/SV_09_10_2026-170.jpg" alt="ภาพถ่าย DREAM PHOTO 7" data-i18n-alt="photo_7" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="mediaflow-group" aria-hidden="true">
@@ -1635,10 +2002,10 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                             </div>
                         </div>
                         <div class="photo-gallery-caption">
-                            <p>เลื่อนชมภาพผลงาน DREAM PHOTO หรือเปิดชมผลงานทั้งหมด</p>
+                            <p data-i18n="photo_caption">อยากชมภาพผลงาน DREAM PHOTO ทั้งหมดกดปุ่มด้านล่างได้เลย</p>
                             <a href="https://ntpremix.x2finity.xyz/" target="_blank" rel="noreferrer"
                                 class="photo-gallery-cta">
-                                ดูผลงานเพิ่มเติม <i class="fas fa-arrow-up-right-from-square"
+                                <span data-i18n="more_works">ดูผลงานเพิ่มเติม</span> <i class="fas fa-arrow-up-right-from-square"
                                     aria-hidden="true"></i>
                             </a>
                         </div>
@@ -1653,22 +2020,22 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
         <div class="contact-glow"></div>
         <div class="contact-layout">
             <div class="contact-copy" data-aos="fade-up">
-                <span class="contact-eyebrow">Available for projects</span>
-                <h2>Follow and<br><span class="text-gradient">Contact</span></h2>
-                <p>มีโปรเจกต์ที่อยากทำด้วยกัน หรืออยากติดตามผลงานใหม่ ๆ แวะมาทักทายกันได้ตามช่องทางด้านล่างครับ</p>
+                <span class="contact-eyebrow" data-i18n="available">Available for projects</span>
+                <h2><span data-i18n="contact_title_first">Follow and</span><br><span class="text-gradient" data-i18n="contact_title_second">Contact</span></h2>
+                <p data-i18n="contact_intro">มีโปรเจกต์ที่อยากทำด้วยกัน หรือ อยากติดตามผลงานใหม่ๆ ตามช่องทางด้านขวาได้เลย</p>
                 <div class="contact-note">
                     <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                    <span>เลือกช่องทางที่สะดวก แล้วมาคุยกันได้เลย</span>
+                    <span data-i18n="contact_note">เลือกช่องทางที่สะดวก แล้วมาคุยกันได้เลย</span>
                 </div>
             </div>
 
-            <div class="contact-links" aria-label="ช่องทางติดตามและติดต่อ">
+            <div class="contact-links" aria-label="ช่องทางติดตามและติดต่อ" data-i18n-aria="contact_channels">
                 <a href="https://discord.com/users/614419131512389642" target="_blank" rel="noreferrer"
                     class="contact-card" style="--contact-color:#a5b4fc;--contact-tint:rgba(88,101,242,.16)"
                     data-aos="fade-up" data-aos-delay="50">
                     <span class="contact-card-main">
                         <span class="contact-card-icon"><i class="fab fa-discord" aria-hidden="true"></i></span>
-                        <span><span class="contact-card-label">Discord</span><span class="contact-card-detail">คุยและติดต่อโดยตรง</span></span>
+                        <span><span class="contact-card-label">Discord</span><span class="contact-card-detail" data-i18n="discord_detail">คุยและติดต่อโดยตรง</span></span>
                     </span>
                     <i class="fas fa-arrow-up-right-from-square contact-card-arrow" aria-hidden="true"></i>
                 </a>
@@ -1678,7 +2045,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                     data-aos="fade-up" data-aos-delay="100">
                     <span class="contact-card-main">
                         <span class="contact-card-icon"><i class="fab fa-facebook" aria-hidden="true"></i></span>
-                        <span><span class="contact-card-label">Facebook</span><span class="contact-card-detail">Nattapon Srisopa
+                        <span><span class="contact-card-label">Facebook</span><span class="contact-card-detail">Nattapon Srisopa</span></span>
                     </span>
                     <i class="fas fa-arrow-up-right-from-square contact-card-arrow" aria-hidden="true"></i>
                 </a>
@@ -1727,21 +2094,308 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
                 nav.classList.add('shadow-lg');
-                nav.style.background = 'rgba(15, 15, 15, 0.96)';
+                nav.style.background = document.documentElement.dataset.theme === 'light'
+                    ? 'rgba(255, 255, 255, 0.96)'
+                    : 'rgba(15, 15, 15, 0.96)';
             } else {
                 nav.classList.remove('shadow-lg');
-                nav.style.background = '#0f0f0f';
+                nav.style.background = document.documentElement.dataset.theme === 'light' ? '#fff' : '#0f0f0f';
             }
         });
 
         // 3. Mobile Menu Toggle
         document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+            const isOpen = document.getElementById('mobileMenu').classList.contains('hidden');
+            setMobileMenuOpen(isOpen);
         });
 
         // Page navigation
         const pageViews = document.querySelectorAll('[data-page-view]');
         const pageIds = new Set(Array.from(pageViews, view => view.dataset.pageView));
+        const translations = {
+            th: {
+                language_select: 'เลือกภาษา',
+                open_menu: 'เปิดเมนู',
+                close_menu: 'ปิดเมนู',
+                main_menu: 'เมนูหลัก',
+                nav_home: 'หน้าแรก',
+                nav_skills: 'ทักษะ',
+                nav_works: 'ผลงาน',
+                nav_contact: 'ติดตามและติดต่อ',
+                modal_label: 'ดูภาพขนาดใหญ่',
+                close_image: 'ปิดภาพ',
+                cover_alt: 'ภาพหน้าปก NPXS',
+                profile_alt: 'รูปโปรไฟล์ Dream (NPXS)',
+                facebook_reel: 'ปกวิดีโอ Facebook Reel',
+                theme_to_light: 'เปลี่ยนเป็นธีมสว่าง',
+                theme_to_dark: 'เปลี่ยนเป็นธีมมืด',
+                about_title: 'เกี่ยวกับฉัน',
+                about_text: 'ผม Dream (NPXS) กำลังศึกษาอยู่ระดับประกาศนียบัตรวิชาชีพชั้นสูง ปีที่ 2 สาขาดิจิทัลกราฟิก ที่ Sahavith Business Administration Technological College (SBA) ผมสนใจสร้างสรรค์งานภาพและเสียง และชอบทดลองไอเดียใหม่ ๆ เพื่อถ่ายทอดเรื่องราวในแบบของตัวเอง',
+                professional: 'ทักษะ',
+                skills: 'ของฉัน',
+                skills_intro: 'ทักษะที่ใช้เปลี่ยนไอเดียให้เป็นภาพ เสียง และเรื่องราวที่ผู้คนจดจำ',
+                skill_graphic: 'ออกแบบอัตลักษณ์องค์กร โลโก้ และสื่อดิจิทัลให้สื่อสารชัดเจนและมีเอกลักษณ์',
+                skill_video: 'ถ่ายทำวิดีโอ วางมุมภาพและเก็บบรรยากาศ เพื่อถ่ายทอดเรื่องราวให้น่าสนใจ',
+                skill_photo: 'ถ่ายภาพและจัดแสงเพื่อจับช่วงเวลาและถ่ายทอดเรื่องราวผ่านภาพ',
+                skill_editing: 'ตัดต่อและเรียบเรียงภาพ เสียง และจังหวะ เพื่อให้วิดีโอกระชับและเล่าเรื่องได้ต่อเนื่อง',
+                skill_grading: 'ปรับแต่งสีและโทนภาพให้มีอารมณ์ สวยงาม และสอดคล้องกับเรื่องราว',
+                skill_motion: 'สร้างกราฟิกเคลื่อนไหวและแอนิเมชัน เพื่อช่วยเล่าเรื่องและเพิ่มความน่าสนใจให้กับวิดีโอ',
+                skill_sound: 'มิกซ์และมาสเตอริ่งเสียง ปรับสมดุลเสียงให้ชัดและกลมกลืน',
+                skill_music: 'รีมิกซ์และโปรดิวซ์เพลง สร้างจังหวะและซาวด์ในแบบเฉพาะตัว',
+                tools_title: 'เครื่องมือที่ใช้งานประจำ',
+                works_my: 'ผลงานของ',
+                works_title: 'ฉัน',
+                works_intro: 'รวมผลงานภาพถ่าย วิดีโอ และงานสร้างสรรค์ที่คัดสรรจากโปรเจกต์ต่าง ๆ',
+                video_works: 'งานวิดีโอ',
+                photo_works: 'งานภาพถ่าย',
+                video_category: 'หมวดหมู่วิดีโอ',
+                watch_youtube: 'ดูวิดีโอบน YouTube',
+                open_facebook: 'เปิดใน Facebook',
+                photo_gallery: 'แกลเลอรีภาพ DREAM PHOTO ที่เคลื่อนที่อัตโนมัติ',
+                photo_1: 'ภาพถ่าย DREAM PHOTO 1',
+                photo_2: 'ภาพถ่าย DREAM PHOTO 2',
+                photo_3: 'ภาพถ่าย DREAM PHOTO 3',
+                photo_4: 'ภาพถ่าย DREAM PHOTO 4',
+                photo_5: 'ภาพถ่าย DREAM PHOTO 5',
+                photo_6: 'ภาพถ่าย DREAM PHOTO 6',
+                photo_7: 'ภาพถ่าย DREAM PHOTO 7',
+                photo_caption: 'อยากชมภาพผลงาน DREAM PHOTO ทั้งหมดกดปุ่มด้านล่างได้เลย',
+                more_works: 'ดูผลงานเพิ่มเติม',
+                available: 'พร้อมรับโปรเจกต์',
+                contact_title_first: 'ติดตามและ',
+                contact_title_second: 'ติดต่อ',
+                contact_intro: 'มีโปรเจกต์ที่อยากทำด้วยกัน หรืออยากติดตามผลงานใหม่ ๆ ดูช่องทางติดต่อได้ที่นี่',
+                contact_note: 'เลือกช่องทางที่สะดวก แล้วมาคุยกันได้เลย',
+                contact_channels: 'ช่องทางติดตามและติดต่อ',
+                discord_detail: 'คุยและติดต่อโดยตรง',
+                project_1: 'TAEXS - รักเธอจนแทบคลั่ง (Everything) feat. LOxEM, SILVER & PoomKitti [Official Audio]',
+                project_2: 'YOUNGOHM - เจิดจรัส (VER.ไทบ้าน), covered by Bookkee',
+                project_3: 'กำลังใจบ่าวบ้านๆ - หนุ่ม พูลสวัสดิ์【Official MV】',
+                project_4: 'พิธีมอบประกาศนียบัตร Cambridge 2026',
+                project_5: 'เลิกกั๊กแล้วรักก่อน (RED FLAG) - NEW CHAYAPAK; ทูลกระหม่อม Cover [NTP RMX], 3-cha dance remix',
+                project_6: 'Sahavith Little Scout P3 2025',
+                project_7: 'ผลงานการแข่งขันสร้างสรรค์คอนเทนต์จากโครงการ ✨Face of Suphanburi✨',
+                project_8: 'นโยบายผู้ลงสมัครนายก อวท.วสวธ. 2569',
+                page_home: 'NPXS Portfolio',
+                page_expertise: 'ทักษะ | NPXS Portfolio',
+                page_works: 'ผลงาน | NPXS Portfolio',
+                page_contact: 'ติดต่อ | NPXS Portfolio'
+            },
+            en: {
+                language_select: 'Select language',
+                open_menu: 'Open menu',
+                close_menu: 'Close menu',
+                main_menu: 'Main menu',
+                nav_home: 'Home',
+                nav_skills: 'Skills',
+                nav_works: 'Works',
+                nav_contact: 'Follow & Contact',
+                modal_label: 'View image full size',
+                close_image: 'Close image',
+                cover_alt: 'NPXS cover image',
+                profile_alt: 'Dream (NPXS) profile photo',
+                facebook_reel: 'Facebook Reel cover',
+                theme_to_light: 'Switch to light theme',
+                theme_to_dark: 'Switch to dark theme',
+                about_title: 'About Me',
+                about_text: 'I’m Dream (NPXS), currently in my second year of the Higher Vocational Certificate program in Digital Graphic Design at Sahavith Business Administration Technological College (SBA). I’m passionate about creating visual and audio work, and I enjoy exploring new ideas to tell stories in my own unique way.',
+                professional: 'Professional ',
+                skills: 'Skills',
+                skills_intro: 'I turn ideas into visuals, sounds, and stories people remember.',
+                skill_graphic: 'Design brand identities, logos, and digital media with clear communication and a distinctive style.',
+                skill_video: 'Film videos, frame each shot, and capture atmosphere to tell engaging stories.',
+                skill_photo: 'Photograph and shape light to capture moments and tell stories through images.',
+                skill_editing: 'Edit and arrange visuals, sound, and rhythm to create concise videos with a smooth narrative.',
+                skill_grading: 'Refine color and tone to create mood and support each story.',
+                skill_motion: 'Create motion graphics and animation to tell stories and make videos more engaging.',
+                skill_sound: 'Mix and master audio for a clear, balanced sound.',
+                skill_music: 'Remix and produce music with distinctive rhythms and sounds.',
+                tools_title: 'Tools I Use',
+                works_my: 'My ',
+                works_title: 'Works',
+                works_intro: 'A curated collection of photography, video, and creative projects.',
+                video_works: 'Video',
+                photo_works: 'Photography',
+                video_category: 'Video',
+                watch_youtube: 'Watch on YouTube',
+                open_facebook: 'Open on Facebook',
+                photo_gallery: 'DREAM PHOTO gallery, scrolling automatically',
+                photo_1: 'DREAM PHOTO 1',
+                photo_2: 'DREAM PHOTO 2',
+                photo_3: 'DREAM PHOTO 3',
+                photo_4: 'DREAM PHOTO 4',
+                photo_5: 'DREAM PHOTO 5',
+                photo_6: 'DREAM PHOTO 6',
+                photo_7: 'DREAM PHOTO 7',
+                photo_caption: 'Explore the complete DREAM PHOTO collection using the button below.',
+                more_works: 'View More Work',
+                available: 'Available for projects',
+                contact_title_first: 'Follow &',
+                contact_title_second: 'Contact',
+                contact_intro: 'Have a project in mind or want to follow my latest work? Find me through the channels here.',
+                contact_note: 'Choose a channel and let’s talk.',
+                contact_channels: 'Follow and contact links',
+                discord_detail: 'Chat and contact me directly',
+                project_1: 'TAEXS - รักเธอจนแทบคลั่ง (Everything) feat. LOxEM, SILVER & PoomKitti [Official Audio]',
+                project_2: 'YOUNGOHM - เจิดจรัส (VER.ไทบ้าน), covered by Bookkee',
+                project_3: 'กำลังใจบ่าวบ้านๆ - หนุ่ม พูลสวัสดิ์【Official MV】',
+                project_4: 'Cambridge 2026 Graduation Ceremony',
+                project_5: 'เลิกกั๊กแล้วรักก่อน (RED FLAG) - NEW CHAYAPAK; ทูลกระหม่อม Cover [NTP RMX], 3-cha dance remix',
+                project_6: 'Sahavith Little Scout P3 2025',
+                project_7: 'Face of Suphanburi Creative Content Competition',
+                project_8: 'Candidate Policies for the 2026 Student Organization President',
+                page_home: 'NPXS Portfolio',
+                page_expertise: 'Skills | NPXS Portfolio',
+                page_works: 'Works | NPXS Portfolio',
+                page_contact: 'Contact | NPXS Portfolio'
+            }
+        };
+
+        let currentLanguage = localStorage.getItem('npxs-language') === 'en' ? 'en' : 'th';
+        let languageFadeTimeout;
+        let languageTransitionToken = 0;
+        let currentTheme = document.documentElement.dataset.theme;
+        let activeThemeTransition = null;
+        const themeToggle = document.getElementById('themeToggle');
+
+        function updateThemeToggle() {
+            const isDark = document.documentElement.dataset.theme !== 'light';
+            const translationKey = isDark ? 'theme_to_light' : 'theme_to_dark';
+            const label = translations[currentLanguage][translationKey];
+            themeToggle.setAttribute('aria-label', label);
+            themeToggle.title = label;
+            themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
+        }
+
+        updateThemeToggle();
+
+        function applyTheme(theme) {
+            const root = document.documentElement;
+            root.dataset.theme = theme;
+            localStorage.setItem('npxs-theme', theme);
+            const nav = document.getElementById('navbar');
+            nav.style.background = theme === 'light'
+                ? (window.scrollY > 50 ? 'rgba(255, 255, 255, 0.96)' : '#fff')
+                : (window.scrollY > 50 ? 'rgba(15, 15, 15, 0.96)' : '#0f0f0f');
+            updateThemeToggle();
+        }
+
+        function startThemeTransition() {
+            if (activeThemeTransition) return;
+
+            const transition = document.startViewTransition(() => applyTheme(currentTheme));
+            activeThemeTransition = transition;
+            const finishTransition = () => {
+                if (activeThemeTransition !== transition) return;
+                activeThemeTransition = null;
+                if (currentTheme !== document.documentElement.dataset.theme) {
+                    startThemeTransition();
+                }
+            };
+
+            transition.ready.catch(error => {
+                if (document.visibilityState === 'visible') {
+                    console.warn('Theme transition could not start; applied the theme without animation.', error);
+                }
+            });
+            transition.finished.then(finishTransition, error => {
+                console.error('Theme transition failed:', error);
+                finishTransition();
+            });
+        }
+
+        themeToggle.addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            const shouldAnimateTheme = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+                && typeof document.startViewTransition === 'function';
+
+            if (shouldAnimateTheme) {
+                startThemeTransition();
+            } else {
+                activeThemeTransition?.skipTransition();
+                applyTheme(currentTheme);
+            }
+        });
+
+        function applyLanguage(language, animate = false) {
+            const translatedText = document.querySelectorAll('[data-i18n]');
+            const shouldAnimate = animate
+                && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const transitionToken = ++languageTransitionToken;
+            window.clearTimeout(languageFadeTimeout);
+            currentLanguage = language;
+
+            const updateTranslatedContent = () => {
+                const dictionary = translations[language];
+                document.documentElement.lang = language;
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    element.textContent = dictionary[element.dataset.i18n];
+                });
+                document.querySelectorAll('[data-i18n-aria]').forEach(element => {
+                    element.setAttribute('aria-label', dictionary[element.dataset.i18nAria]);
+                });
+                document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+                    element.setAttribute('alt', dictionary[element.dataset.i18nAlt]);
+                });
+                document.querySelectorAll('[data-language]').forEach(button => {
+                    button.setAttribute('aria-pressed', String(button.dataset.language === language));
+                });
+                updateThemeToggle();
+                const pageId = window.location.hash.slice(1);
+                document.title = dictionary[`page_${pageIds.has(pageId) ? pageId : 'home'}`];
+            };
+
+            if (!shouldAnimate) {
+                translatedText.forEach(element => {
+                    element.classList.remove('language-fade-out');
+                });
+                updateTranslatedContent();
+                return;
+            }
+
+            translatedText.forEach(element => {
+                element.classList.add('language-fade-target');
+            });
+            window.requestAnimationFrame(() => {
+                if (transitionToken !== languageTransitionToken) return;
+                translatedText.forEach(element => {
+                    element.classList.add('language-fade-out');
+                });
+                languageFadeTimeout = window.setTimeout(() => {
+                    if (transitionToken !== languageTransitionToken) return;
+                    updateTranslatedContent();
+                    window.requestAnimationFrame(() => {
+                        if (transitionToken !== languageTransitionToken) return;
+                        translatedText.forEach(element => {
+                            element.classList.remove('language-fade-out');
+                        });
+                    });
+                }, 220);
+            });
+        }
+
+        document.querySelectorAll('[data-language]').forEach(button => {
+            button.addEventListener('click', () => {
+                const language = button.dataset.language;
+                if (language === currentLanguage) return;
+                localStorage.setItem('npxs-language', language);
+                applyLanguage(language, true);
+            });
+        });
+
+        applyLanguage(currentLanguage);
+
+        function setMobileMenuOpen(isOpen) {
+            const menu = document.getElementById('mobileMenu');
+            const button = document.getElementById('mobileMenuBtn');
+            const labelKey = isOpen ? 'close_menu' : 'open_menu';
+
+            menu.classList.toggle('hidden', !isOpen);
+            button.setAttribute('aria-expanded', String(isOpen));
+            button.dataset.i18nAria = labelKey;
+            button.setAttribute('aria-label', translations[currentLanguage][labelKey]);
+        }
+
         let pageTransitionTimeout;
         let pageTransitionToken = 0;
 
@@ -1752,13 +2406,6 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
             const shouldFade = currentView && currentView !== nextView
                 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             const transitionToken = ++pageTransitionToken;
-            const pageTitles = {
-                home: 'NPXS Portfolio',
-                expertise: 'ทักษะ | NPXS Portfolio',
-                works: 'ผลงาน | NPXS Portfolio',
-                contact: 'ติดต่อ | NPXS Portfolio'
-            };
-
             pageViews.forEach(view => {
                 view.classList.remove('page-enter', 'page-leave');
             });
@@ -1780,7 +2427,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                 displayPage();
             }
 
-            document.title = pageTitles[activePage];
+            document.title = translations[currentLanguage][`page_${activePage}`];
 
             document.querySelectorAll('a[href^="#"]').forEach(link => {
                 const isActive = link.getAttribute('href') === `#${activePage}`;
@@ -1794,7 +2441,7 @@ TAEXS - รักเธอจนแทบคลั่ง (Everything) Feat.LOxEM
                 }
             });
 
-            document.getElementById('mobileMenu').classList.add('hidden');
+            setMobileMenuOpen(false);
             const previousScrollBehavior = document.documentElement.style.scrollBehavior;
             document.documentElement.style.scrollBehavior = 'auto';
             window.scrollTo(0, 0);
